@@ -21,7 +21,7 @@ public class ChatClient {
 
             senderThread.join();
             listenerThread.join();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
