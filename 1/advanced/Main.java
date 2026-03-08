@@ -1,6 +1,8 @@
 package advanced;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         try (
-                FileOutputStream fileOutputStream = new FileOutputStream(PATH);
-                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-                PrintStream printStream = new PrintStream(bufferedOutputStream, true);
+                PrintStream printStream = new PrintStream(
+                        new BufferedOutputStream(
+                                Files.newOutputStream(Paths.get(PATH))), true);
         ) {
             printStream.println("Hello World!");
             printStream.println(250);
