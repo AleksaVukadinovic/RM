@@ -26,8 +26,8 @@ public class ChessServerThread implements Runnable {
 
     private void serve() {
         try (
-                PrintStream out = new PrintStream(socket.getOutputStream(), true);
-                Scanner in = new Scanner(socket.getInputStream())
+                PrintStream out = new PrintStream(new BufferedOutputStream(socket.getOutputStream()), true);
+                Scanner in = new Scanner(new BufferedInputStream(socket.getInputStream()))
         ) {
             while (in.hasNextLine()) {
                 String line = in.nextLine().trim();
