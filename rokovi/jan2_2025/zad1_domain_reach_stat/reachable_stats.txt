@@ -1,0 +1,4 @@
+Ukupan broj dostupnih domena: 0
+Ukupan broj nedostupnih domena: 5
+Dostupni domeni sa vremenom odziva:
+Top 3 najbrža domena:
